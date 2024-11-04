@@ -1,0 +1,21 @@
+### Создание пользователя
+POST localhost:8080/create-user
+Content-Type: application/json
+
+{
+  "name": "{{$random.alphabetic(10)}}"
+}
+
+### Добавление денег на счет
+POST localhost:8080/add-money
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "moneysToAdd": {{$random.integer(10, 100)}}
+}
+
+###
+GET localhost:8080/actuator/prometheus
+
+
