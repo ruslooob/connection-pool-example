@@ -3,6 +3,10 @@ spring:
     url: jdbc:postgresql://localhost:5432/postgres
     username: user
     password: password
+    hikari:
+      maximum-pool-size: 10
+
+#    type: org.springframework.jdbc.datasource.SimpleDriverDataSource # отключить ConnectionPool
 management:
   endpoints:
     web:
@@ -10,3 +14,6 @@ management:
         include:
           - health
           - prometheus
+logging:
+  charset:
+    console: utf-8
